@@ -1,0 +1,248 @@
+[
+  {
+    "number": 141,
+    "title": "Jan 2026 term: certificates show wrong course duration — all 8-week courses",
+    "state": "OPEN",
+    "author": {
+      "login": "you-github-login"
+    },
+    "assignees": [
+      {
+        "login": "bob-ops"
+      }
+    ],
+    "body": "### What's needed?\n\nCertificates for 8-week courses print \"12 weeks\" as the duration.\n\n### Full URL(s)\n\nhttps://portal.example.org/certificates/verify/ABC123\n\n### Logged in as\n\nAdmin (ops-admin@example.org)\n\n### Expected result — how do we verify it's done?\n\nRe-downloaded certificate for any 8-week course shows \"8 weeks\".\n\n### Full-screen screenshot\n\nN/A\n\n### Dev diagnostics (optional)\n\n_No response_\n\n### Categories\n\n- [X] Certificates\n- [ ] Website\n- [ ] Learner Portal\n- [ ] Coordinator Portal\n- [ ] Admin Operations\n- [ ] Data & Audit\n- [ ] Reporting\n- [ ] Exam Form\n- [ ] Question Bank\n- [ ] Security\n- [ ] Tech Debt\n\n### Urgency\n\nP1 — Urgent (needed this week)\n\n### Needed by\n\n2026-03-13",
+    "comments": [
+      {
+        "author": {
+          "login": "bob-ops"
+        },
+        "body": "Found it: the template reads weeks from the old course table. Fix is ready, regenerating a test batch now.",
+        "createdAt": "2026-03-12T10:15:00Z"
+      },
+      {
+        "author": {
+          "login": "bob-ops"
+        },
+        "body": "Test batch looks right to me — can you spot-check 3 certificates before I regenerate all ~4,200?",
+        "createdAt": "2026-03-14T10:15:00Z"
+      }
+    ],
+    "updatedAt": "2026-03-14T12:00:00Z",
+    "url": "https://github.com/acme-edu/operations/issues/141"
+  },
+  {
+    "number": 142,
+    "title": "Mar 2026 exams: exam form rejects valid ID numbers — all learners",
+    "state": "OPEN",
+    "author": {
+      "login": "you-github-login"
+    },
+    "assignees": [
+      {
+        "login": "bob-ops"
+      },
+      {
+        "login": "alice-dev"
+      }
+    ],
+    "body": "### What's needed?\n\nExam registration form says \"Invalid ID\" for IDs containing a hyphen.\n\n### Full URL(s)\n\nhttps://portal.example.org/exam-form\n\n### Logged in as\n\nLearner test account (learner.test@example.org)\n\n### Expected result — how do we verify it's done?\n\nAn ID like AB-1234-5678 is accepted and the form submits.\n\n### Full-screen screenshot\n\nN/A\n\n### Dev diagnostics (optional)\n\nConsole: 422 from /api/exam-form/validate\n\n### Categories\n\n- [ ] Certificates\n- [ ] Website\n- [X] Learner Portal\n- [ ] Coordinator Portal\n- [ ] Admin Operations\n- [ ] Data & Audit\n- [ ] Reporting\n- [X] Exam Form\n- [ ] Question Bank\n- [ ] Security\n- [ ] Tech Debt\n\n### Urgency\n\nP0 — Critical (blocking learners or exams right now)\n\n### Needed by\n\n2026-03-16",
+    "comments": [
+      {
+        "author": {
+          "login": "alice-dev"
+        },
+        "body": "Validation regex is too strict after the last release. Hotfix PR is up.",
+        "createdAt": "2026-03-16T10:15:00Z"
+      }
+    ],
+    "updatedAt": "2026-03-16T12:00:00Z",
+    "url": "https://github.com/acme-edu/operations/issues/142"
+  },
+  {
+    "number": 143,
+    "title": "Apr 2026 term: bulk-enrol coordinator upload times out — files over 2,000 rows",
+    "state": "OPEN",
+    "author": {
+      "login": "erin-coord"
+    },
+    "assignees": [
+      {
+        "login": "you-github-login"
+      }
+    ],
+    "body": "### What's needed?\n\nCoordinator bulk enrolment CSV upload spins and then fails for large files.\n\n### Full URL(s)\n\nhttps://portal.example.org/coordinator/enrol/bulk\n\n### Logged in as\n\nCoordinator test account\n\n### Expected result — how do we verify it's done?\n\nA 5,000-row CSV uploads and a success summary is shown within 2 minutes.\n\n### Full-screen screenshot\n\nN/A\n\n### Dev diagnostics (optional)\n\n_No response_\n\n### Categories\n\n- [ ] Certificates\n- [ ] Website\n- [ ] Learner Portal\n- [X] Coordinator Portal\n- [ ] Admin Operations\n- [ ] Data & Audit\n- [ ] Reporting\n- [ ] Exam Form\n- [ ] Question Bank\n- [ ] Security\n- [ ] Tech Debt\n\n### Urgency\n\nP1 — Urgent (needed this week)\n\n### Needed by\n\n2026-03-18",
+    "comments": [
+      {
+        "author": {
+          "login": "erin-coord"
+        },
+        "body": "Three coordinators reported this again today. Could you raise it with the dev team?",
+        "createdAt": "2026-03-11T10:15:00Z"
+      }
+    ],
+    "updatedAt": "2026-03-11T12:00:00Z",
+    "url": "https://github.com/acme-edu/operations/issues/143"
+  },
+  {
+    "number": 144,
+    "title": "Jan 2026 term: monthly enrolment report missing two regions — Feb report",
+    "state": "OPEN",
+    "author": {
+      "login": "you-github-login"
+    },
+    "assignees": [
+      {
+        "login": "carol-data"
+      }
+    ],
+    "body": "### What's needed?\n\nFebruary enrolment report has no rows for the North-East and Islands regions.\n\n### Full URL(s)\n\nhttps://reports.example.org/enrolment/2026-02\n\n### Logged in as\n\nReporting viewer\n\n### Expected result — how do we verify it's done?\n\nReport totals match the dashboard total for February (31,480).\n\n### Full-screen screenshot\n\nN/A\n\n### Dev diagnostics (optional)\n\n_No response_\n\n### Categories\n\n- [ ] Certificates\n- [ ] Website\n- [ ] Learner Portal\n- [ ] Coordinator Portal\n- [ ] Admin Operations\n- [X] Data & Audit\n- [X] Reporting\n- [ ] Exam Form\n- [ ] Question Bank\n- [ ] Security\n- [ ] Tech Debt\n\n### Urgency\n\nP2 — Normal\n\n### Needed by\n\n2026-03-12",
+    "comments": [
+      {
+        "author": {
+          "login": "carol-data"
+        },
+        "body": "Looking into the region mapping table.",
+        "createdAt": "2026-03-09T10:15:00Z"
+      }
+    ],
+    "updatedAt": "2026-03-09T12:00:00Z",
+    "url": "https://github.com/acme-edu/operations/issues/144"
+  },
+  {
+    "number": 145,
+    "title": "Website: update FAQ page with new exam fee — fee change",
+    "state": "OPEN",
+    "author": {
+      "login": "you-github-login"
+    },
+    "assignees": [
+      {
+        "login": "alice-dev"
+      }
+    ],
+    "body": "### What's needed?\n\nFAQ still lists the old exam fee.\n\n### Full URL(s)\n\nhttps://www.example.org/faq#fees\n\n### Logged in as\n\nNot logged in (public page)\n\n### Expected result — how do we verify it's done?\n\nFAQ shows the new fee and the last-updated date.\n\n### Full-screen screenshot\n\nN/A\n\n### Dev diagnostics (optional)\n\n_No response_\n\n### Categories\n\n- [ ] Certificates\n- [X] Website\n- [ ] Learner Portal\n- [ ] Coordinator Portal\n- [ ] Admin Operations\n- [ ] Data & Audit\n- [ ] Reporting\n- [ ] Exam Form\n- [ ] Question Bank\n- [ ] Security\n- [ ] Tech Debt\n\n### Urgency\n\nP3 — Low (whenever possible)\n\n### Needed by\n\n2026-03-31",
+    "comments": [],
+    "updatedAt": "2026-03-05T12:00:00Z",
+    "url": "https://github.com/acme-edu/operations/issues/145"
+  },
+  {
+    "number": 146,
+    "title": "Question bank: duplicate questions in week 3 quizzes — Data Science course",
+    "state": "OPEN",
+    "author": {
+      "login": "farah-qb"
+    },
+    "assignees": [
+      {
+        "login": "farah-qb"
+      },
+      {
+        "login": "you-github-login"
+      }
+    ],
+    "body": "### What's needed?\n\nWeek 3 quizzes contain the same question twice.\n\n### Full URL(s)\n\nhttps://portal.example.org/admin/qbank/ds-101/week-3\n\n### Logged in as\n\nQuestion bank editor\n\n### Expected result — how do we verify it's done?\n\nEach week 3 quiz has 10 unique questions.\n\n### Full-screen screenshot\n\nN/A\n\n### Dev diagnostics (optional)\n\n_No response_\n\n### Categories\n\n- [ ] Certificates\n- [ ] Website\n- [ ] Learner Portal\n- [ ] Coordinator Portal\n- [ ] Admin Operations\n- [ ] Data & Audit\n- [ ] Reporting\n- [ ] Exam Form\n- [X] Question Bank\n- [ ] Security\n- [ ] Tech Debt\n\n### Urgency\n\nP2 — Normal\n\n### Needed by\n\n2026-03-20",
+    "comments": [
+      {
+        "author": {
+          "login": "you-github-login"
+        },
+        "body": "Shared the list of affected quiz IDs in the sheet.",
+        "createdAt": "2026-03-13T10:15:00Z"
+      },
+      {
+        "author": {
+          "login": "farah-qb"
+        },
+        "body": "Removed 14 duplicates. 2 quizzes still need a replacement question — can you confirm whether we reuse last term's?",
+        "createdAt": "2026-03-15T10:15:00Z"
+      }
+    ],
+    "updatedAt": "2026-03-15T12:00:00Z",
+    "url": "https://github.com/acme-edu/operations/issues/146"
+  },
+  {
+    "number": 147,
+    "title": "Security: rotate shared admin password after staff change — admin console",
+    "state": "OPEN",
+    "author": {
+      "login": "you-github-login"
+    },
+    "assignees": [
+      {
+        "login": "dan-infra"
+      }
+    ],
+    "body": "### What's needed?\n\nA staff member with admin access has left; the shared admin credential must be rotated.\n\n### Full URL(s)\n\nhttps://portal.example.org/admin\n\n### Logged in as\n\nN/A\n\n### Expected result — how do we verify it's done?\n\nOld credential no longer works; new one is in the team vault.\n\n### Full-screen screenshot\n\nN/A\n\n### Dev diagnostics (optional)\n\n_No response_\n\n### Categories\n\n- [ ] Certificates\n- [ ] Website\n- [ ] Learner Portal\n- [ ] Coordinator Portal\n- [X] Admin Operations\n- [ ] Data & Audit\n- [ ] Reporting\n- [ ] Exam Form\n- [ ] Question Bank\n- [X] Security\n- [ ] Tech Debt\n\n### Urgency\n\nP1 — Urgent (needed this week)\n\n### Needed by\n\n2026-03-16",
+    "comments": [],
+    "updatedAt": "2026-03-10T12:00:00Z",
+    "url": "https://github.com/acme-edu/operations/issues/147"
+  },
+  {
+    "number": 148,
+    "title": "Tech debt: remove legacy CSV export endpoint — admin reports",
+    "state": "OPEN",
+    "author": {
+      "login": "dan-infra"
+    },
+    "assignees": [
+      {
+        "login": "dan-infra"
+      }
+    ],
+    "body": "### What's needed?\n\nOld CSV export is unused and unmaintained.\n\n### Full URL(s)\n\nhttps://portal.example.org/admin/export/legacy\n\n### Logged in as\n\nAdmin\n\n### Expected result — how do we verify it's done?\n\nEndpoint returns 410 and no report links point to it.\n\n### Full-screen screenshot\n\nN/A\n\n### Dev diagnostics (optional)\n\n_No response_\n\n### Categories\n\n- [ ] Certificates\n- [ ] Website\n- [ ] Learner Portal\n- [ ] Coordinator Portal\n- [ ] Admin Operations\n- [ ] Data & Audit\n- [ ] Reporting\n- [ ] Exam Form\n- [ ] Question Bank\n- [ ] Security\n- [X] Tech Debt\n\n### Urgency\n\nP3 — Low (whenever possible)\n\n### Needed by\n\n_No response_",
+    "comments": [],
+    "updatedAt": "2026-03-02T12:00:00Z",
+    "url": "https://github.com/acme-edu/operations/issues/148"
+  },
+  {
+    "number": 149,
+    "title": "Jan 2026 term: learner name change not reflected on certificate — single learner",
+    "state": "CLOSED",
+    "author": {
+      "login": "you-github-login"
+    },
+    "assignees": [
+      {
+        "login": "bob-ops"
+      }
+    ],
+    "body": "### What's needed?\n\nLearner updated their name but the certificate still shows the old one.\n\n### Full URL(s)\n\nhttps://portal.example.org/certificates/verify/XYZ789\n\n### Logged in as\n\nAdmin\n\n### Expected result — how do we verify it's done?\n\nRe-downloaded certificate shows the new name.\n\n### Full-screen screenshot\n\nN/A\n\n### Dev diagnostics (optional)\n\n_No response_\n\n### Categories\n\n- [X] Certificates\n- [ ] Website\n- [X] Learner Portal\n- [ ] Coordinator Portal\n- [ ] Admin Operations\n- [ ] Data & Audit\n- [ ] Reporting\n- [ ] Exam Form\n- [ ] Question Bank\n- [ ] Security\n- [ ] Tech Debt\n\n### Urgency\n\nP2 — Normal\n\n### Needed by\n\n2026-03-10",
+    "comments": [
+      {
+        "author": {
+          "login": "bob-ops"
+        },
+        "body": "Updated and regenerated. Learner confirmed.",
+        "createdAt": "2026-03-08T10:15:00Z"
+      }
+    ],
+    "updatedAt": "2026-03-08T12:00:00Z",
+    "url": "https://github.com/acme-edu/operations/issues/149"
+  },
+  {
+    "number": 150,
+    "title": "Admin ops: audit log export for Q1 — compliance review",
+    "state": "OPEN",
+    "author": {
+      "login": "carol-data"
+    },
+    "assignees": [
+      {
+        "login": "carol-data"
+      }
+    ],
+    "body": "### What's needed?\n\nExport admin audit logs for January–March for the compliance review.\n\n### Full URL(s)\n\nhttps://portal.example.org/admin/audit\n\n### Logged in as\n\nAdmin\n\n### Expected result — how do we verify it's done?\n\nA CSV covering 2026-01-01 to 2026-03-31 is attached to this ticket.\n\n### Full-screen screenshot\n\nN/A\n\n### Dev diagnostics (optional)\n\n_No response_\n\n### Categories\n\n- [ ] Certificates\n- [ ] Website\n- [ ] Learner Portal\n- [ ] Coordinator Portal\n- [X] Admin Operations\n- [X] Data & Audit\n- [ ] Reporting\n- [ ] Exam Form\n- [ ] Question Bank\n- [ ] Security\n- [ ] Tech Debt\n\n### Urgency\n\nP2 — Normal\n\n### Needed by\n\n2026-04-03",
+    "comments": [
+      {
+        "author": {
+          "login": "carol-data"
+        },
+        "body": "Export is running, will attach by Wednesday.",
+        "createdAt": "2026-03-15T10:15:00Z"
+      }
+    ],
+    "updatedAt": "2026-03-15T12:00:00Z",
+    "url": "https://github.com/acme-edu/operations/issues/150"
+  }
+]

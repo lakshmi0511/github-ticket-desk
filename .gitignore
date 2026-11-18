@@ -1,0 +1,11 @@
+# Your personal config (repo, login, team) — copy from config.example.json
+config.json
+
+# Python
+__pycache__/
+*.py[cod]
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

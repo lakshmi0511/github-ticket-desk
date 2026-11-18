@@ -1,0 +1,91 @@
+# GitHub issue form for operations tickets.
+# Copy to .github/ISSUE_TEMPLATE/operations_ticket.yml in your operations repo.
+# The field labels below become the `### ...` headings that SKILL.md and
+# scripts/track.py rely on, so keep them in sync if you rename anything.
+name: Operations ticket
+description: Request a fix or change from the operations / dev team.
+title: "<Programme / month>: <what> — <scope>"
+body:
+  - type: textarea
+    id: whats-needed
+    attributes:
+      label: What's needed?
+      description: Describe the problem or request in one or two sentences.
+    validations:
+      required: true
+
+  - type: textarea
+    id: urls
+    attributes:
+      label: Full URL(s)
+      description: Paste the complete link(s) to the affected page(s).
+    validations:
+      required: true
+
+  - type: input
+    id: logged-in-as
+    attributes:
+      label: Logged in as
+      description: Which account / role were you using? ("Not logged in" is fine.)
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result — how do we verify it's done?
+      description: A concrete check anyone can run to confirm the ticket is resolved.
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Full-screen screenshot
+      description: Drag in a full-screen screenshot (include the address bar). Write N/A if not applicable.
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Dev diagnostics (optional)
+      description: Console errors, network responses, request IDs — anything that helps a developer.
+
+  - type: checkboxes
+    id: categories
+    attributes:
+      label: Categories
+      description: Tick all that apply.
+      options:
+        - label: Certificates
+        - label: Website
+        - label: Learner Portal
+        - label: Coordinator Portal
+        - label: Admin Operations
+        - label: Data & Audit
+        - label: Reporting
+        - label: Exam Form
+        - label: Question Bank
+        - label: Security
+        - label: Tech Debt
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgency
+      options:
+        - P0 — Critical (blocking learners or exams right now)
+        - P1 — Urgent (needed this week)
+        - P2 — Normal
+        - P3 — Low (whenever possible)
+      default: 2
+    validations:
+      required: true
+
+  - type: input
+    id: needed-by
+    attributes:
+      label: Needed by
+      description: Date in YYYY-MM-DD format.
+      placeholder: "2026-03-31"
+    validations:
+      required: true

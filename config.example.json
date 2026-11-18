@@ -1,0 +1,31 @@
+{
+  "repo": "acme-edu/operations",
+  "me": "you-github-login",
+  "people": [
+    { "name": "Alice",  "login": "alice-dev",   "areas": ["Learner Portal", "Website"] },
+    { "name": "Bob",    "login": "bob-ops",     "areas": ["Certificates", "Exam Form"] },
+    { "name": "Carol",  "login": "carol-data",  "areas": ["Data & Audit", "Reporting"] },
+    { "name": "Dan",    "login": "dan-infra",   "areas": ["Security", "Tech Debt"] },
+    { "name": "Erin",   "login": "erin-coord",  "areas": ["Coordinator Portal", "Admin Operations"] },
+    { "name": "Farah",  "login": "farah-qb",    "areas": ["Question Bank"] }
+  ],
+  "categories": [
+    "Certificates",
+    "Website",
+    "Learner Portal",
+    "Coordinator Portal",
+    "Admin Operations",
+    "Data & Audit",
+    "Reporting",
+    "Exam Form",
+    "Question Bank",
+    "Security",
+    "Tech Debt"
+  ],
+  "urgency": [
+    { "level": "P0", "label": "P0 — Critical (blocking learners or exams right now)" },
+    { "level": "P1", "label": "P1 — Urgent (needed this week)" },
+    { "level": "P2", "label": "P2 — Normal" },
+    { "level": "P3", "label": "P3 — Low (whenever possible)" }
+  ]
+}
